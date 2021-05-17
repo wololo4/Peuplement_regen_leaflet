@@ -1,0 +1,103 @@
+/*definition du style de la carte*/
+body {
+    padding: 0;
+    margin: 0;
+}
+html, body, #map {
+    height: 100%;
+    width: 100%;
+}
+
+#map {
+    border-right: 1px solid #d7d7d7;
+    position: fixed;
+    top: 0px;
+    width: 66%;
+    z-index: 0;
+  }
+
+#app-sidebar {
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 33%;
+}
+
+#app-sidebar .chart-wrapper {
+border: medium none;
+box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+/*.app-sidebar-chart {
+    height: 300px;
+    overflow : auto
+}*/
+
+/*style des popup avec plusieurs tabs*/
+.leaflet-popup-content {
+    width:240px;  
+    overflow: auto;
+}
+
+.tabs {
+    position:relative;
+    min-height:200px;
+    clear:both;
+    margin:25px 0;
+}
+.tab {
+    float:left;
+    display: none;
+}
+.tab:first-of-type {
+    display: inline-block;
+}
+.tabs-link {
+    position: relative;
+    top: -14px;
+    height: 20px;
+    left: -40px;
+}
+.tab-link {
+    background:#eee;
+    display: inline-block;
+    padding:10px;
+    border:1px solid #ccc;
+    margin-left:-1px;
+    position:relative;
+    list-style-type: none;
+    left:1px;
+    top:1px;
+    cursor:pointer;
+}
+.tab-link {
+    background:#f8f8f8;
+}
+.content {
+    background:white;
+    position:absolute;
+    top:28px;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:20px;
+    border:1px solid #ccc;
+    height: max-content;
+}
+.tab:target {
+    display: block;
+}
+
+/*retire l'erreur de style avec bootstrap. le label etait sur le symbole avec box-sizing pour la lÃƒÂ©gende*/
+* {
+    -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+  *:before,
+  *:after {
+    -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+            box-sizing: content-box;
+  }

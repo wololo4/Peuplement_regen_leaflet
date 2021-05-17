@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<title>Potentiel de re&#769ge&#769ne&#769ration</title>
+
+	<!-- importation de leaflet-->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+	<!-- importation de jquery et de bootstrap-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- importation du plugins leaflet-bing-layer-->
+	<script src="plugins/leaflet-bing-layer.js"></script>
+
+	<!-- importation du plugins TileLayer.BetterWMS-->
+	<script src="plugins/L.TileLayer.BetterWMS.js"></script>
+
+	<!-- importation du plugins leaflet-ajax-min-->
+	<script src="plugins/leaflet-ajax-min.js"></script>
+
+	<!-- importation du plugins turf.js-->
+	<script src='https://unpkg.com/@turf/turf@6.3.0/turf.min.js'></script>
+
+	<!-- chart.js-->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+	
+	<!-- importation de la libraire leaflet.mini-map (permet d'ajouter une mini carte)-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+
+	<!-- importation du plugins leaflet.legend-->
+	<link rel="stylesheet" href="css/leaflet.legend.css">
+	<script src="plugins/leaflet.Legend.js"></script>
+
+	<!-- importation de scripts perso-->
+	<link rel="stylesheet" href="css/perso.css">
+	<script src="js/upload.js"></script>
+	<script src="js/initCarte.js"></script>
+	<script src="js/makeLegend.js"></script>
+	<script src="js/miniMap.js"></script>
+	
+</head>
+
+<body>
+	<div id="map"></div>
+
+	<div id="app-sidebar">
+		<div id="chart-01" class="app-sidebar-chart">
+			<label for="input">Select a zipped shapefile:</label> <input type="file" id="file"> <br>
+			<input type="submit" id="submit"> <span id="warning"></span>
+		</div>
+		<br>
+		<div id="chart-02" class="app-sidebar-chart">
+			<canvas id="myChart" width="400" height="400"></canvas>
+		</div>
+		<br>
+		<div id="chart-03" class="app-sidebar-chart">
+			<canvas id="pieChart" width="400" height="400"></canvas>
+		</div>   
+	  </div>
+
+	<script>
+
+		//script qui permet d'initialiser la carte (voir initCarte.js)
+		initCarte();
+
+		//permet d'uploader la couche de donner à partir de protocole ajax (voir upload.js)
+		upload();
+
+		/*$(document).ready(function () {
+
+			var btn = $.fn.button.noConflict() // obligatoire pour corriger conflit jqueryUI et bootstrap
+			$.fn.btn = btn // obligatoire pour corriger conflit jqueryUI et bootstrap
+
+			creationCarte();
+			creationBarreOutils();
+			outilAccordeon();
+			outilMesure();
+			outilExport();
+
+		});*/
+	</script>
+</body>
+
+</html>
